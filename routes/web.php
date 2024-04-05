@@ -20,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('admin.dashboard');
-Route::get('/user', [HomeController::class, 'index'])->name('user.index');
+
+Route::get('/tagihan', [HomeController::class, 'tagihan'])->name('user.tagihan');
 Route::get('/create', [HomeController::class, 'create'])->name('user.create');
 Route::post('/tambah', [HomeController::class, 'tambah'])->name('user.tambah');
 

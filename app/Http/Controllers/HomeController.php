@@ -17,11 +17,18 @@ class HomeController extends Controller
         return view('dashboard', compact('data'));
     }
 
+    
     public function index()
     {
         $data = User::get();
 
         return view('index', compact('data'));
+    }
+    public function tagihan()
+    {
+        $data = [];
+
+        return view('tagihan', compact('data'));
     }
 
     public function create()
