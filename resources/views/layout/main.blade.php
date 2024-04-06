@@ -24,7 +24,7 @@
         </div>
         <ul class="nav_list">
             <li>
-                <a href="index.html">
+                <a href="{{ route('admin.dashboard') }}">
                     <i class="bi bi-grid"></i>
                     <span class="links_name">Dashboard</span>
                 </a>
@@ -40,34 +40,34 @@
 
             <!-- tagihan dropdown (awal)-->
             <li>
-                <a href="semua_tag.html">
+                <a href="{{ route('tagihan.index') }}">
                     <i class="bi bi-cash-stack"></i>
                     <span class="links_name">Tagihan</span>
                 </a>
                 <span class="tooltip">Tagihan</span>
-                <div id="tag-items" class="dropdown-con">
+                {{-- <div id="tag-items" class="dropdown-con">
                     <ul>
                         <li>
-                            <a href="tambah_tag.html">
+                            <a href="#">
                                 <i class="bi bi-receipt"></i>
                                 <span class="links_name">Tambah Tagihan</span>
                             </a>
                             <span class="tooltip">Tambah Tagihan</span>
                         </li>
                         <li>
-                            <a href="semua_tag.html">
+                            <a href="#">
                                 <i class="bi bi-cash-stack"></i>
                                 <span class="links_name">Semua Tagihan</span>
                             </a>
                             <span class="tooltip">Semua Tagihan</span>
                         </li>
                     </ul>
-                </div>
+                </div> --}}
             </li>
             <!-- tagihan dropdown (akhir)-->
 
             <li>
-                <a href="#">
+                <a href="{{ route('siswa.index') }}">
                     <i class="bi bi-cash-coin"></i>
                     <span class="links_name">Pemasukan</span>
                 </a>
