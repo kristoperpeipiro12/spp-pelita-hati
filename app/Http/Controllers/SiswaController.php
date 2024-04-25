@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Siswa;
+use Illuminate\Http\Request;
 
 class SiswaController extends Controller
 {
@@ -21,19 +21,20 @@ class SiswaController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nama' => 'required|string|max:255',
-            'alamat' => 'required|string',
-            'tempatlahir' => 'required|string|max:255',
-            'tanggallahir' => 'required|date',
-            'jeniskelamin' => 'required|in:Laki-laki,Perempuan',
-            'kelas' => 'required|string|max:255',
-            'nohp' => 'required|string|max:20',
+            'nis' => 'required',
+            'nama' => 'required',
+            'alamat' => 'required',
+            'tempatlahir' => 'required',
+            'tanggallahir' => 'required',
+            'jeniskelamin' => 'required',
+            'kelas' => 'required',
+            'nohp' => 'required',
             'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         Siswa::create($validatedData);
 
-        return redirect()->route('siswa.index')->with('success', 'Siswa berhasil ditambahkan.');
+        return redirect()->route('siswa.index')->with('success', 'Data siswa berhasil disimpan.');
     }
 
     public function edit($nis)
@@ -45,27 +46,30 @@ class SiswaController extends Controller
     public function update(Request $request, $nis)
     {
         $validatedData = $request->validate([
-            'nama' => 'required|string|max:255',
-            'alamat' => 'required|string',
-            'tempatlahir' => 'required|string|max:255',
+            'nis' => 'required',
+            'nama' => 'required',
+            'alamat' => 'required',
+            'tempatlahir' => 'required',
             'tanggallahir' => 'required|date',
-            'jeniskelamin' => 'required|in:Laki-laki,Perempuan',
-            'kelas' => 'required|string|max:255',
-            'nohp' => 'required|string|max:20',
+            'jeniskelamin' => 'required|in:laki-laki,perempuan',
+            'kelas' => 'required',
+            'nohp' => 'required',
             'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $siswa = Siswa::where('nis', $nis)->firstOrFail();
+        $siswa = Siswa::findOrFail($nis);
         $siswa->update($validatedData);
 
-        return redirect()->route('siswa.index')->with('success', 'Siswa berhasil diperbarui.');
+        return redirect()->route('siswa.index')->with('success', 'Data siswa berhasil diperbarui.');
     }
-
-    public function delete($nis)
+    Public function delete($nis)
     {
-        $siswa = Siswa::where('nis', $nis)->firstOrFail();
-        $siswa->delete();
+        $data = Siswa::find($nis);
 
-        return redirect()->route('siswa.index')->with('success', 'Siswa berhasil dihapus.');
+        if ($data) {
+            $data->delete();
+        }
+        return redirect()->route('siswa.index');
     }
+
 }

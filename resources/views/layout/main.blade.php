@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="{{asset('UI_spps/assets/logoSekolah.png')}}">
-    <link rel="stylesheet" href="{{asset('UI_spps/bootstrap/css/bootstrap.css')}}">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="{{asset('UI_spps/css/style.css')}}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('UI_spps/assets/logoSekolah.png') }}">
+    <link rel="stylesheet" href="{{ asset('UI_spps/bootstrap/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{{ asset('UI_spps/css/style.css') }}">
     <title>SPPS Pelita Hati</title>
 </head>
 
@@ -69,9 +68,9 @@
             <li>
                 <a href="{{ route('siswa.index') }}">
                     <i class="bi bi-cash-coin"></i>
-                    <span class="links_name">Pemasukan</span>
+                    <span class="links_name">siswa</span>
                 </a>
-                <span class="tooltip">Pemasukan</span>
+                <span class="tooltip">siswa</span>
             </li>
             <li>
                 <a href="#">
@@ -81,7 +80,7 @@
                 <span class="tooltip">Pengeluaran</span>
             </li>
             <li>
-                <a href="masterdata.html">
+                <a href="#">
                     <i class="bi bi-database"></i>
                     <span class="links_name">Master Data</span>
                 </a>
@@ -103,7 +102,7 @@
             </li>
         </ul>
         <div class="logout">
-            <a href="login.html">
+            <a href="{{ route('logout') }}">
                 <div class="logoutbtn">
                     <div class="logout_details">Log-Out</div>
                     <i class="bi bi-box-arrow-left" id="log_out"></i>
@@ -114,36 +113,24 @@
     <!-- End Sidebar -->
 
     <!-- Start Content -->
-    <div class="home_content">
-        <!-- Start Navbar -->
-        <nav class="navbar rounded-start-4">
-            <div class="navbar-brand fs-3 fw-bold gap-3 ps-3 text-white">
-                <img src="{{asset('UI_spps/assets/logoSekolah.png')}}" alt="" width="50px" />
-                <a href="#" class="text-white text-decoration-none">SD Pelita Hati</a>
-            </div>
-            <div class="nav-navbar d-flex align-self-stretch align-items-center gap-5 me-4 fw-bold text-white">
-                <div class="notif d-flex flex-row mx-3">
-                    <a href="#" class="text-white"><i class="bi bi-whatsapp"></i></a>
-                    <a href="#" class="text-white"><i class="bi bi-bell-fill"></i></a>
-                </div>
-                <div class="jam d-flex flex-row gap-3">
-                    <i class="bi" id="logoJam"></i>
-                    <div class="d-inline-block" id="jam"></div>
-                </div>
-            </div>
-        </nav>
-        <!-- End Navbar -->
-
-        <!-- Start Dashboard -->
-       @yield('content')
-        <!-- End Dashboard -->
-    </div>
+    @yield('content')
     <!-- End Content -->
+    <script src="{{ asset('UI_spps/bootstrap/js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ asset('UI_spps//js/script.js') }}"></script>
+    <script src="{{ asset('UI_spps//js/sem_tag.js') }}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="{{asset('UI_spps/bootstrap/js/bootstrap.js')}}"></script>
-    <script src="{{asset('UI_spps/js/script.js')}}"></script>
-    <script src="{{asset('UI_spps/js/dashboard.js')}}"></script>
+    <script src="{{ asset('UI_spps/bootstrap/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('UI_spps/js/script.js') }}"></script>
+    <script src="{{ asset('UI_spps/js/dashboard.js') }}"></script>
+
+    <script src="{{ asset('UI_spps/js/masterdata.js') }}"></script>
+    <script src="{{ asset('UI_spps/bootstrap/js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ asset('UI_spps/js/script.js') }}"></script>
+
+    <script src="{{ asset('UI_spps/bootstrap/js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ asset('UI_spps/js/script.js') }}"></script>
+
 </body>
 
 </html>
