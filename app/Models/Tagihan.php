@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Tagihan extends Model
 {
     protected $table = 'tagihan';
-
+    
+    protected $primaryKey = 'idtagihan';
     protected $fillable = [
         'idtagihan',
         'nis',
@@ -17,7 +18,6 @@ class Tagihan extends Model
         'jatuhtempo',
     ];
 
-    protected $primaryKey = 'idtagihan';
 
     public $timestamps = false;
 

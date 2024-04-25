@@ -55,7 +55,6 @@
         <thead>
           <tr>
             <th scope="col">No</th>
-            <th scope="col">ID Tagihan</th>
             <th scope="col">NIS</th>
             <th scope="col">Nama Siswa/i</th>
             <th scope="col">Kelas</th>
@@ -69,8 +68,7 @@
           @foreach($tagihan as $item)
           <tr>
               <td>{{ $loop->iteration }}</td>
-              <td>{{ $item->idtagihan }}</td>
-              <td>{{ $item->siswa ? $item->siswa->nis : 'N/A' }}</td>
+              <td>{{ $item->siswa ? ($item->siswa->nis ? $item->siswa->nis : '-') : '-' }}</td>
               <td>{{ $item->nama }}</td>
               <td>{{ $item->kelas }}</td>
               <td>{{ $item->keterangan }}</td>
@@ -102,6 +100,7 @@
           </tr>
       @endforeach
       
+      
           <!-- Isi tabel tagihan akan ditampilkan di sini -->
         </tbody>
       </table>
@@ -123,30 +122,18 @@
               aria-expanded="false"
               id="pn-item-select"
             >
-              Per-Murid
-            </button>
-            <ul class="dropdown-menu">
-              <li id="tam-tag-murid">
-                <a class="dropdown-item text-center" href="#">Per-Murid</a>
-              </li> 
-              <li id="tam-tag-kelas">
-                <a class="dropdown-item text-center" href="#">Per-Kelas</a>
-              </li>
-              <li id="tam-tag-ta">
-                <a class="dropdown-item text-center" href="#">Per-Tahun Ajar</a>
-              </li>
-            </ul>
+           
           </div>
         </div>
         <!-- Form tambah tagihan -->
-        <form action="{{ route('tagihan.store') }}" method="POST" id="form-tambah-tagihan">
+        <form action="{{ route('tagihan.store') }}" method="POST">
           @csrf
           <div class="main-pn-tag">
             <div id="siswa">
-              <div class="input-text">
+              {{-- <div class="input-text">
                 <span>Id Tagihan</span>
                 <input type="text" name="idtagihan" placeholder="" />
-              </div>
+              </div> --}}
               <div class="input-text">
                 <span>Nomor Induk Siswa</span>
                 <input type="text" name="nis" placeholder="" />
@@ -172,34 +159,6 @@
                 <input type="date" name="jatuhtempo" placeholder="" />
               </div>
             </div>
-            {{-- <div id="kelas" class="d-none">
-              <div class="input-text">
-                <span>Kelas</span>
-                <input type="text" name="kelas" placeholder="61xxxxxxxxxxx" />
-              </div>
-              <div class="input-text">
-                <span>Keterangan Tagihan</span>
-                <input type="text" name="keterangan" placeholder="Pembayaran SPP" />
-              </div>
-              <div class="input-text">
-                <span>Nominal Tagihan</span>
-                <input type="number" name="tunggakan" placeholder="Rp. xxx.xxx" />
-              </div>
-            </div>
-            <div id="tahun-ajar" class="d-none">
-              <div class="input-text">
-                <span>Tahun Ajar</span>
-                <input type="text" name="tahun_ajar" placeholder="61xxxxxxxxxxx" />
-              </div>
-              <div class="input-text">
-                <span>Keterangan Tagihan</span>
-                <input type="text" name="keterangan" placeholder="Pembayaran SPP" />
-              </div>
-              <div class="input-text">
-                <span>Nominal Tagihan</span>
-                <input type="number" name="tunggakan" placeholder="Rp. xxx.xxx" />
-              </div>
-            </div> --}}
             <div
               class="btn-input-tag d-flex justify-content-end gap-4 mt-3 mb-2"
             >

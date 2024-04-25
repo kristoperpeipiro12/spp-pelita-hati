@@ -11,7 +11,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Form Edit tagihan</li>
+                        <li class="breadcrumb-item active">Form edit tagihan</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -38,44 +38,33 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">NIS</label>
                                     <input type="text" name="nis" class="form-control" id="nis"
-                                        value="{{ $siswa->nis }}">
+                                        value="{{ $tagihan->nis }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Nama</label>
                                     <input type="text" class="form-control" id="nama" name="nama"
-                                        value="{{ $siswa->nama }}">
+                                        value="{{ $tagihan->nama }}">
                                 </div>
                                 <div class="form-group">
-                                  <label for="exampleInputEmail1">Alamat</label>
-                                  <input type="text" class="form-control" id="alamat" name="alamat"
-                                      value="{{ $siswa->alamat }}">
+                                  <label for="exampleInputEmail1">kelas</label>
+                                  <input type="text" class="form-control" id="kelas" name="kelas"
+                                      value="{{ $tagihan->kelas }}">
                               </div>
                               <div class="form-group">
-                                <label for="exampleInputEmail1">Tempat lahir</label>
-                                <input type="text" class="form-control" id="tempatlahir" name="tempatlahir"
-                                    value="{{ $siswa->tempatlahir }}" placeholder="Tempat lahir">
+                                <label for="exampleInputEmail1">Keterangan</label>
+                                <input type="text" class="form-control" id="keterangan" name="keterangan"
+                                    value="{{ $tagihan->keterangan }}">
                             </div>
                             <div class="form-group">
-                              <label for="exampleInputEmail1">Tanggal Lahir</label>
-                              <input type="date" class="form-control" id="tanggallahir" name="tanggallahir"
-                                  value="{{ $siswa->tanggallahir }}" placeholder="Tanggal Lahir">
+                              <label for="exampleInputEmail1">Tunggakan</label>
+                              <input type="number" class="form-control" id="tagihan" name="tagihan"
+                                  value="{{ $tagihan->tagihan }}">
                           </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Jenis Kelamin</label>
-                            <select class="form-control" id="jeniskelamin" name="jeniskelamin">
-                                <option value="laki-laki" {{ $siswa->jeniskelamin == 'laki-laki' ? 'selected' : '' }}>Laki-laki</option>
-                                <option value="perempuan" {{ $siswa->jeniskelamin == 'perempuan' ? 'selected' : '' }}>Perempuan</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Kelas</label>
-                          <input type="text" class="form-control" id="kelas" name="kelas"
-                              value="{{ $siswa->kelas }}">
-                      </div>
+                         
                       <div class="form-group">
-                        <label for="exampleInputEmail1">No HP</label>
-                        <input type="text" class="form-control" id="nohp" name="nohp"
-                            value="{{ $siswa->nohp }}">
+                        <label for="exampleInputEmail1">Jatuh tempo</label>
+                        <input type="date" class="form-control" id="jatuhtempo" name="jatuhtempo"
+                            value="{{ $tagihan->jatuhtempo }}">
                     </div>
                             </div>
                             <div class="card-footer">

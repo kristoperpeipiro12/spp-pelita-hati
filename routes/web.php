@@ -54,5 +54,5 @@ Route::get('/tagihan', [TagihanController::class, 'index'])->name('tagihan.index
 Route::get('/tagihan/create', [TagihanController::class, 'create'])->name('tagihan.create');
 Route::post('/tagihan/store', [TagihanController::class, 'store'])->name('tagihan.store');
 Route::get('/tagihan/{idtagihan}/edit', [TagihanController::class, 'edit'])->name('tagihan.edit');
-Route::put('/tagihan/{idtagihan}/update', [TagihanController::class, 'update'])->name('tagihan.update');
+Route::post('/tagihan/{idtagihan}/update', [TagihanController::class, 'update'])->name('tagihan.update');
 Route::delete('/tagihan/{idtagihan}/delete', [TagihanController::class, 'destroy'])->name('tagihan.delete');
